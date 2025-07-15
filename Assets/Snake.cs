@@ -1,6 +1,8 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Snake : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Snake : MonoBehaviour
     private List<Transform> _segments = new List<Transform> ();
     public Transform segmentPrefab;
     public int initalSize = 4;
+    public GameObject gameOverScreen;
 
     private void Start()
     {
@@ -71,6 +74,10 @@ public class Snake : MonoBehaviour
         this.transform.position = Vector3.zero;
 
     }
+    public void gameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -78,7 +85,8 @@ public class Snake : MonoBehaviour
         {
             Grow();
         } else if (other.tag == "Obstacle") {
-            ResetState();
+            //ResetState();
+            gameOver();
         }
     }
 }

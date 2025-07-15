@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 510baa5aee45afe4cac38f1cda911ea4
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/snakegame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
