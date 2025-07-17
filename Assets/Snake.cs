@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.UI;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class Snake : MonoBehaviour
@@ -12,10 +15,13 @@ public class Snake : MonoBehaviour
     public int initalSize = 4;
     public GameObject gameOverScreen;
 
+
     private void Start()
     {
-       ResetState();
+        ResetState();
     }
+
+   
     
     
     private void Update()
@@ -53,7 +59,7 @@ public class Snake : MonoBehaviour
     {
         Transform segment = Instantiate(this.segmentPrefab);
         segment.position = _segments[_segments.Count - 1].position;
-
+        Score.scoreValue += 1;
         _segments.Add (segment);
     }
 
@@ -72,6 +78,7 @@ public class Snake : MonoBehaviour
         }
 
         this.transform.position = Vector3.zero;
+
 
     }
     public void gameOver()

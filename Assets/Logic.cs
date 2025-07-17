@@ -21,6 +21,7 @@ public class Logic : MonoBehaviour
 
     public void restartGame()
     {
+        Score.scoreValue = 0;
         SceneManager.LoadScene("snakegame");
 
     }
